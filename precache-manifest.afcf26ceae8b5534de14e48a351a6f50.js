@@ -36,16 +36,16 @@ self.__precacheManifest = [
     "url": "/pageLaguna/static/js/6.ca0f2c91.chunk.js"
   },
   {
-    "revision": "b38ef310874bdd008ac14ef3db939032",
-    "url": "/pageLaguna/static/media/Pe-icon-7-stroke.b38ef310.woff"
+    "revision": "01798bc13e33afc36a52f2826638d386",
+    "url": "/pageLaguna/static/media/Pe-icon-7-stroke.01798bc1.ttf"
   },
   {
     "revision": "71394c0c7ad6c1e7d5c77e8ac292fba5",
     "url": "/pageLaguna/static/media/Pe-icon-7-stroke.71394c0c.eot"
   },
   {
-    "revision": "01798bc13e33afc36a52f2826638d386",
-    "url": "/pageLaguna/static/media/Pe-icon-7-stroke.01798bc1.ttf"
+    "revision": "b38ef310874bdd008ac14ef3db939032",
+    "url": "/pageLaguna/static/media/Pe-icon-7-stroke.b38ef310.woff"
   },
   {
     "revision": "dedf26989fdd78c33cb9ae664a604d6c",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/pageLaguna/static/media/materialdesignicons-webfont.1a95531b.woff"
   },
   {
-    "revision": "6acc7d6cffa21f6eda4baaa90e835fd2",
-    "url": "/pageLaguna/static/media/materialdesignicons-webfont.6acc7d6c.ttf"
-  },
-  {
     "revision": "be7691c114e7c9d0543b89e824c4003d",
     "url": "/pageLaguna/static/media/materialdesignicons-webfont.be7691c1.eot"
+  },
+  {
+    "revision": "6acc7d6cffa21f6eda4baaa90e835fd2",
+    "url": "/pageLaguna/static/media/materialdesignicons-webfont.6acc7d6c.ttf"
   },
   {
     "revision": "51b68d0604660b53c44400ccdef379c0",
@@ -76,12 +76,12 @@ self.__precacheManifest = [
     "url": "/pageLaguna/static/media/img-1.8b073cf7.jpg"
   },
   {
-    "revision": "80e52295922c70fdaa79d54afe26e883",
-    "url": "/pageLaguna/static/media/bg-home.80e52295.jpg"
-  },
-  {
     "revision": "d0b8f70643b398774a14ebe4e56bbdcb",
     "url": "/pageLaguna/static/media/img-2.d0b8f706.jpg"
+  },
+  {
+    "revision": "80e52295922c70fdaa79d54afe26e883",
+    "url": "/pageLaguna/static/media/bg-home.80e52295.jpg"
   },
   {
     "revision": "07c9babb2e101fa952538a5cf85258c5",
