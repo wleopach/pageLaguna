@@ -1,4 +1,4 @@
-import React.Component from "react";
+import React, { Component } from "react";
 import { Col, Row as div } from "reactstrap";
 import { NavLink } from 'react-router-dom';
 import i18n from "i18next";
