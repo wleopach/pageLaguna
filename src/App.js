@@ -11,6 +11,7 @@ import './css/magnific-popup.css';
 import './css/style.css';
 import './css/colors/red.css';
 
+import { withNamespaces } from 'react-i18next';
 
 const Index = React.lazy(() => import('./pages/index-9'));
 

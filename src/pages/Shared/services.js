@@ -1,14 +1,18 @@
 
 import React, { Component } from 'react';
 import { Col, Row as div } from 'reactstrap';
+import i18n from "i18next";
+import { withTranslation} from "react-i18next";
 
 
+  
 class Services extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-        }
+        };
+		this.t=this.props.t;
     }
 
     render() {
@@ -19,7 +23,7 @@ class Services extends Component {
                     <div className="container">
                         <div>
                             <Col lg="8" className="offset-lg-2">
-                                <h1 className="section-title text-center">Nuestros Servicios</h1>
+                                <h1 className="section-title text-center">{this.t('NS')}</h1>
                                 <div className="section-title-border margin-t-20"></div>
                             </Col>
                         </div>
@@ -29,8 +33,8 @@ class Services extends Component {
                                     <div className="media">
                                         <i className="pe-7s-chat text-custom"></i>
                                         <div className="media-body ml-4">
-                                            <h4>Chatbots inteligentes</h4>
-                                            <p className="pt-2 text-muted">Asistentes conversacionales capaces de atender las necesidades de tus clientes 24/7</p>
+                                            <h4>{this.t('CI')}</h4>
+                                            <p className="pt-2 text-muted">{this.t('AC')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -40,8 +44,8 @@ class Services extends Component {
                                     <div className="media">
                                         <i className="pe-7s-like2 text-custom"></i>
                                         <div className="media-body ml-4">
-                                            <h4>Clasificación de textos</h4>
-                                            <p className="pt-2 text-muted">Clasificación de datos no estructurados. Análisis de sentimientos y clasificación de PQR. Te ayudamos a entender como se relacionan tus clientes con tu producto.</p>
+                                            <h4>{this.t('CT')}</h4>
+                                            <p className="pt-2 text-muted">{this.t('CD')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -51,8 +55,8 @@ class Services extends Component {
                                     <div className="media">
                                         <i className="pe-7s-note2 text-custom"></i>
                                         <div className="media-body ml-4">
-                                            <h4>Sumarización automática</h4>
-                                            <p className="pt-2 text-muted">Algoritmos para la extracción y estructuración de información relevante en textos. Disminuye el tiempo dedicado al escrutinio del lenguaje.</p>
+                                            <h4>{this.t('SA')}</h4>
+                                            <p className="pt-2 text-muted">{this.t('AE')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -64,8 +68,8 @@ class Services extends Component {
                                     <div className="media">
                                         <i className="pe-7s-graph2 text-custom"></i>
                                         <div className="media-body ml-4">
-                                            <h4>Análisis de datos</h4>
-                                            <p className="pt-2 text-muted">Exploración y visualización de datos, análisis y modelización reportados en tableros de control. Extrae valor de la información de tu empresa.</p>
+                                            <h4>{this.t('AD')}</h4>
+                                            <p className="pt-2 text-muted">{this.t('EV')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -75,8 +79,8 @@ class Services extends Component {
                                     <div className="media">
                                         <i className="pe-7s-tools text-custom"></i>
                                         <div className="media-body ml-4">
-                                            <h4>Modelos analíticos</h4>
-                                            <p className="pt-2 text-muted">Modelos de regresión lineal y logística, Análisis de series de tiempo, Redes Neuronales, Análisis topológico de datos</p>
+                                            <h4>{this.t('MA')}</h4>
+                                            <p className="pt-2 text-muted">{this.t('MR')}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -88,6 +92,6 @@ class Services extends Component {
         );
     }
 }
-export default Services;
+export default withTranslation()(Services);
 
 

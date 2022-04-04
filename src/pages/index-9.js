@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Col, Row } from 'reactstrap';
-
+import i18n from "i18next";
+import { withTranslation, initReactI18next } from "react-i18next";
 //Layout css
 import '../css/colors/yellow.css';
 
@@ -18,6 +19,31 @@ import ContactUs from './Shared/contact-us';
 
 
 
+// translate
+
+import {translationsEs, translationsEn} from '../i18n/translate';
+
+const lngs = {
+  en: { nativeName: 'English' },
+  es: { nativeName: 'Español'},
+};
+
+i18n
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    resources: {
+      en: { translation: translationsEn },
+      es: { translation: translationsEs},
+    },
+	debug: true,
+    lng: "es",
+    fallbackLng: "es",
+    interpolation: { escapeValue: false },
+  });
+
+
+
+
 class Index9 extends Component {
 
     constructor(props) {
@@ -26,6 +52,7 @@ class Index9 extends Component {
             isOpen: false
         }
         this.openModal = this.openModal.bind(this)
+      this.t = this.props.t;
     }
     openModal() {
         this.setState({ isOpen: true })
@@ -51,13 +78,17 @@ class Index9 extends Component {
 
     render() {
 
+
         return (
             <React.Fragment>
 
                 {/*  Header */}
                 <Header />
+				
 
                 {/* Home Section */}
+				
+				
                 <section className="section bg-home height-100vh" id="home">
                     <div className="bg-overlay"></div>
                     <div className="">
@@ -65,15 +96,16 @@ class Index9 extends Component {
                             <div className="container slidero">
                                 <Row>
                                     <Col lg="8" className="offset-lg-2 text-white text-center">
-                                        <h4 className="home-small-title">Análisis de datos</h4>
-                                        <h1 className="home-title">Especializados en procesamiento del lenguaje natural</h1>
-                                        <p style={{color:"#FFFFFF"}} className="padding-t-15 home-desc mx-auto">Ofrecemos servicios tecnológicos y estadísticos. Nos enfocamos en el procesamiento de lenguaje natural, rama de la inteligencia artificial que ayuda a las computadoras a entender, interpretar y manipular el lenguaje humano.</p>
+                                        <h4 className="home-small-title">{this.t("análisisDeDatos")}</h4>
+                                        <h1 className="home-title">{this.t("espNLP")}</h1>
+                                        <p style={{color:"#FFFFFF"}} className="padding-t-15 home-desc mx-auto">{this.t("WeOffer")}</p>
                                       </Col>
                                 </Row>
                             </div>
                         </div>
                     </div>
-                     
+					
+
                     <Particles style={{ position: "absolute" }}
                         params={{"particles": {
                             "number": {
@@ -178,11 +210,11 @@ class Index9 extends Component {
                             }
                           },
                           "retina_detect": true
-                            
+
                         }} />
 
                 </section>
-
+				
                 {/* Services */}
                 <Services />
 
@@ -200,6 +232,6 @@ class Index9 extends Component {
     }
 }
 
-export default Index9;
+export default  withTranslation()(Index9);
 
 

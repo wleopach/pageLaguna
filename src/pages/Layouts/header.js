@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollspyNav from './Scrollspy';
 import logoA from '../../images/logo.png';
+import { withTranslation, initReactI18next } from "react-i18next";
+import i18n from "i18next";
+const lngs = {
+  en: { nativeName: 'English' },
+  es: { nativeName: 'Español'},
+};
 
 
 class Header extends Component {
@@ -11,6 +17,7 @@ class Header extends Component {
         this.state = { Tab: '', isOpen: false };
 
         this.toggleMenu = this.toggleMenu.bind(this);
+		this.t=this.props.t;
     }
 
     toggleMenu = () => {
@@ -47,10 +54,20 @@ class Header extends Component {
                                     className={this.state.isOpen ? "navbar-nav ml-0 float-left" : "navbar-nav navbar-center"} >
                                         
                                     <ul className={this.state.isOpen ? "navbar-nav navbar-left" : "navbar-nav ml-auto navbar-left"} id="mySidenav">
-                                        <li className="nav-item active"><a style={{fontSize:"18px"}} href="#home" className="nav-link">Inicio</a></li>
-                                        <li className="nav-item"><a style={{fontSize:"18px"}} href="#services" className="nav-link">Servicios</a></li>
-                                        <li className="nav-item"><a style={{fontSize:"18px"}} href="#about" className="nav-link">Acerca de nosotros</a></li>
-                                        <li className="nav-item"><a style={{fontSize:"18px"}} href="#contact" className="nav-link">Contacto</a> </li>
+                                        <li className="nav-item active"><a style={{fontSize:"18px"}} href="#home" className="nav-link">{this.t('IN')}</a></li>
+                                        <li className="nav-item"><a style={{fontSize:"18px"}} href="#services" className="nav-link">{this.t('SE')}</a></li>
+                                        <li className="nav-item"><a style={{fontSize:"18px"}} href="#about" className="nav-link">{this.t('AU')}</a></li>
+                                        <li className="nav-item"><a style={{fontSize:"18px"}} href="#contact" className="nav-link">{this.t('CO')}</a> </li>
+										{Object.keys(lngs).map((lng) => (
+										<li>
+										<button  type="button" className=" btn btn-custom " 
+										key={lng} style={{ fontWeight: i18n.language === lng ? 'bold' : 'normal' }} type="submit" onClick={() => {
+										i18n.changeLanguage(lng);
+										}}>
+										{lngs[lng].nativeName}
+										</button>
+										</li>
+										))}
                                     </ul>
 
                                 </ScrollspyNav>
@@ -63,6 +80,6 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default withTranslation()(Header);
 
 

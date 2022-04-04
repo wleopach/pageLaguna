@@ -1,12 +1,18 @@
 import React, { Component } from "react";
 import { Col, Row as div } from "reactstrap";
 import { NavLink } from 'react-router-dom';
+import i18n from "i18next";
+import { withTranslation } from "react-i18next";
+
+
 
 
 class About1 extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+	this.t=this.props.t;
+	
   }
 
   render() {
@@ -17,19 +23,11 @@ class About1 extends Component {
             <div className="row">
               <Col lg="8" className="offset-lg-2">
                 <h1 className="section-title text-center">
-                  Acerca de nosotros
+                  {this.t('AN')}
                 </h1>
                 <div className="section-title-border margin-t-20"></div>
                 <p className="section-subtitle text-center font-secondary padding-t-30">
-                  Fundamos LAGUNA-AI con el fin de adaptar toda empresa a la
-                  cuarta revolución industrial. Pensando en esto, ofrecemos
-                  servicios tecnológicos y estadísticos. Nos enfocamos en el
-                  procesamiento de lenguaje natural, rama de la inteligencia
-                  artificial que ayuda a las computadoras a entender,
-                  interpretar y manipular el lenguaje humano. Para hacerlo,
-                  nuestro equipo cuenta con profesionales en matemáticas,
-                  estadística y ciencia de datos. <br /> <br /> Nos gusta
-                  prestar servicios útiles y de calidad.
+                  {this.t('FL')} <br /> <br /> {this.t('NC')}
                 </p>
               </Col>
             </div>
@@ -41,7 +39,7 @@ class About1 extends Component {
                 type="button"
                 className="btn btn-custom navbar-btn btn-rounded waves-effect waves-light"
               >
-                ¡Conoce nuestro equipo!
+                {this.t('CN')}
               </button>
             </NavLink>
           </div>
@@ -51,4 +49,4 @@ class About1 extends Component {
   }
 }
 
-export default About1;
+export default withTranslation()(About1);

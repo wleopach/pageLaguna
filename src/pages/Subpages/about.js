@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Card, CardBody } from "reactstrap";
 import Particles from "react-particles-js";
+import { withTranslation } from "react-i18next";
 
 import img1 from "../../images/team/img-1.jpg";
 import img2 from "../../images/team/img-2.jpg";
@@ -14,10 +15,13 @@ import img8 from "../../images/team/img-8.jpg";
 import img9 from "../../images/team/img-9.jpg";
 
 
+
+
 class About extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+	this.t=this.props.t;
   }
 
   componentDidMount() {
@@ -154,7 +158,7 @@ class About extends Component {
                 className="font-weight-bold"
                 className="text-dark text-uppercase account-pages-logo"
               >
-                Nuestro equipo
+			  {this.t('NEQ')}
               </h3>
             </div>
             <div className="p-3">
@@ -183,10 +187,9 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Juan Felipe</h4>
-                      <h5 className="text-uppercase">Científico de datos</h5>
+                      <h5 className="text-uppercase">{this.t('DC')}</h5>
                       <p className="team-designation">
-                        Ph.D en Matemáticas. Experto en algoritmos de
-                        clasificación supervisada.{" "}
+                        {this.t('JF')}{" "}
                       </p>
                     </div>
                   </div>
@@ -214,10 +217,9 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Laura</h4>
-                      <h5 className="text-uppercase">Analista de datos</h5>
+                      <h5 className="text-uppercase">{this.t('DA')}</h5>
                       <p className="team-designation">
-                        Profesional en Estadística. Experta en diseño de
-                        experimentos y modelos de regresión.{" "}
+                       {this.t('L')}{" "}
                       </p>
                     </div>
                   </div>
@@ -245,10 +247,9 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Yiby</h4>
-                      <h5 className="text-uppercase">Ingeniera de ML</h5>
+                      <h5 className="text-uppercase">{this.t('ML')}</h5>
                       <p className="team-designation">
-                        Ph.D. en matemáticas. Experta en aprendizaje automático
-                        en la nube.{" "}
+                        {this.t('Y')}{" "}
                       </p>
                     </div>
                   </div>
@@ -276,10 +277,10 @@ class About extends Component {
                           ></div>
                         </div>
                       </div>
-                      <h4 className="team-name">Santiago</h4>
-                      <h5 className="text-uppercase">Arquitecto de software</h5>
+                      <h4 className="team-name">Leonardo</h4>
+                      <h5 className="text-uppercase">{this.t('DC')}</h5>
                       <p className="team-designation">
-                        Ingeniero de Sistemas y Computación.
+                       {this.t('LE')}
                       </p>
                     </div>
                   </div>
@@ -306,9 +307,9 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Humberto</h4>
-                      <h5 className="text-uppercase">Estadístico senior</h5>
+                      <h5 className="text-uppercase">{this.t('ES')}</h5>
                       <p className="team-designation">
-                        M.Sc. en Sistemas. Experto en gerencia de proyectos.
+                        {this.t('H')}
                       </p>
                     </div>
                   </div>
@@ -335,8 +336,8 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Carlos</h4>
-                      <h5 className="text-uppercase">Analista de datos NLP</h5>
-                      <p className="team-designation">Ph.D. en Matemáticas.</p>
+                      <h5 className="text-uppercase">{this.t('DN')}</h5>
+                      <p className="team-designation">{this.t('CA')}</p>
                     </div>
                   </div>
                 </div>
@@ -365,9 +366,9 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Jose</h4>
-                      <h5 className="text-uppercase">Gerente comercial</h5>
+                      <h5 className="text-uppercase">t{('GC')}</h5>
                       <p className="team-designation">
-                        Desarrollador de software
+                        t{('SD')}
                       </p>
                     </div>
                   </div>
@@ -395,8 +396,8 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Alejandra</h4>
-                      <h5 className="text-uppercase">Creadora de contenidos</h5>
-                      <p className="team-designation">MSc. en Química</p>
+                      <h5 className="text-uppercase">{this.t('CC')}</h5>
+                      <p className="team-designation">{this.t('MQ')}</p>
                     </div>
                   </div>
 
@@ -423,8 +424,8 @@ class About extends Component {
                         </div>
                       </div>
                       <h4 className="team-name">Julian</h4>
-                      <h5 className="text-uppercase">Desarrollador NLP</h5>
-                      <p className="team-designation">Matemático</p>
+                      <h5 className="text-uppercase">{this.t('DP')}</h5>
+                      <p className="team-designation">{this.t('M')}</p>
                     </div>
                   </div>
                 </div>
@@ -437,4 +438,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default withTranslation()(About);
