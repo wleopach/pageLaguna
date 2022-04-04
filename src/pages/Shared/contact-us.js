@@ -1,5 +1,5 @@
 
-import React, { Component} from 'react';
+import React.Component from 'react';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import emailjs from '@emailjs/browser';
 import AvInput from 'availity-reactstrap-validation/lib/AvInput';

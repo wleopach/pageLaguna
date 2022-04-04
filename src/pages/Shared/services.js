@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React.Component from 'react';
 import { Col, Row as div } from 'reactstrap';
 import i18n from "i18next";
 import { withTranslation} from "react-i18next";
